@@ -14,6 +14,7 @@ const StyledDiv = styled.div`
   height: 100vh;
   grid-template-rows: auto 1fr;
 `;
+
 function AppLayout() {
   return (
     <StyledDiv>
