@@ -13,13 +13,16 @@ module.exports = {
   settings: { react: { version: "18.2" } },
   plugins: ["react-refresh"],
   rules: {
+    // 1. The React Refresh rule (kept exactly as it was)
     "react-refresh/only-export-components": [
       "warn",
       { allowConstantExport: true },
-      { "react/prop-types": 0 },
-      {
-        "no-unused-vars": "warn",
-      },
     ],
+
+    // 2. Turn off Prop-Types validation entirely
+    "react/prop-types": "off",
+
+    // 3. Turn unused variables into yellow warnings instead of red errors
+    "no-unused-vars": "warn",
   },
 };
