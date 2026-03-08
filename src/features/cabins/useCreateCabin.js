@@ -6,6 +6,7 @@ export function useCreateCabin() {
   const QueryClient = useQueryClient();
   const { mutate: createCabin, isPending: isCreating } = useMutation({
     mutationFn: createEditCabin,
+
     onSuccess: () => {
       toast.success("Successfully created cabin");
       QueryClient.invalidateQueries({
