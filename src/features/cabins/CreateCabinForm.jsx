@@ -29,6 +29,7 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
   // console.log(errors);
 
   function onSubmit(data) {
+    console.log({ data });
     const image = typeof data.image === "string" ? data.image : data.image[0];
     // console.log({ data });
     if (isEditSession)
@@ -145,7 +146,7 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
         >
           Cancel
         </Button>
-        <Button disabled={isCreating}>
+        <Button disabled={isWorking}>
           {isEditSession ? "Edit Cabin" : "Add new cabin"}
         </Button>
       </FormRow>

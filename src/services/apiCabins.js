@@ -4,6 +4,8 @@ import supabase from "./Supabase";
 
 export async function apiCabins() {
   const { data, error } = await supabase.from("cabins").select("*");
+  console.log({ data });
+
   if (error) {
     console.error(error);
     throw new Error("Cabins data cant be loaded");
@@ -45,6 +47,7 @@ export async function createEditCabin(newCabin, id) {
 
   const { data, error } = await query.select().single();
 
+  console.log({ data });
   if (error) {
     console.error(error);
     throw new Error("Cabins data cant be Inserted");
